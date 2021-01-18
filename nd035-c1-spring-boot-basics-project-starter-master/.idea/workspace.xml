@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="e6437dd6-d68e-4ef0-a019-2fb9a9418229" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1nCKZccCiPi0lN2l4lFhr7UGlxf" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RunManager">
+    <configuration name="CloudStorageApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.udacity.jwdnd.course1.cloudstorage.CloudStorageApplication" />
+      <module name="cloudstorage" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.udacity.jwdnd.course1.cloudstorage.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.CloudStorageApplication" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e6437dd6-d68e-4ef0-a019-2fb9a9418229" name="Default Changelist" comment="" />
+      <created>1610888688817</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1610888688817</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="533" y="141" key="#com.intellij.ide.util.MemberChooser" timestamp="1610992178573">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="533" y="141" key="#com.intellij.ide.util.MemberChooser/0.0.1440.900@0.0.1440.900" timestamp="1610992178573" />
+    <state x="570" y="357" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1610888837822">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="570" y="357" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1440.900@0.0.1440.900" timestamp="1610888837822" />
+    <state width="1398" height="245" key="GridCell.Tab.0.bottom" timestamp="1610992694880">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="245" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1610992694880" />
+    <state width="1398" height="245" key="GridCell.Tab.0.center" timestamp="1610992694877">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="245" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1610992694877" />
+    <state width="1398" height="245" key="GridCell.Tab.0.left" timestamp="1610992694875">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="245" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1610992694875" />
+    <state width="1398" height="245" key="GridCell.Tab.0.right" timestamp="1610992694878">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="245" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1610992694878" />
+    <state width="1398" height="303" key="GridCell.Tab.1.bottom" timestamp="1610908155970">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="303" key="GridCell.Tab.1.bottom/0.0.1440.900@0.0.1440.900" timestamp="1610908155970" />
+    <state width="1398" height="303" key="GridCell.Tab.1.bottom/0.22.1440.839@0.22.1440.839" timestamp="1610907763840" />
+    <state width="1398" height="303" key="GridCell.Tab.1.center" timestamp="1610908155967">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="303" key="GridCell.Tab.1.center/0.0.1440.900@0.0.1440.900" timestamp="1610908155967" />
+    <state width="1398" height="303" key="GridCell.Tab.1.center/0.22.1440.839@0.22.1440.839" timestamp="1610907763836" />
+    <state width="1398" height="303" key="GridCell.Tab.1.left" timestamp="1610908155966">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="303" key="GridCell.Tab.1.left/0.0.1440.900@0.0.1440.900" timestamp="1610908155966" />
+    <state width="1398" height="303" key="GridCell.Tab.1.left/0.22.1440.839@0.22.1440.839" timestamp="1610907763835" />
+    <state width="1398" height="303" key="GridCell.Tab.1.right" timestamp="1610908155968">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="303" key="GridCell.Tab.1.right/0.0.1440.900@0.0.1440.900" timestamp="1610908155968" />
+    <state width="1398" height="303" key="GridCell.Tab.1.right/0.22.1440.839@0.22.1440.839" timestamp="1610907763837" />
+    <state x="399" y="282" key="com.intellij.ide.util.TipDialog" timestamp="1610948080773">
+      <screen x="0" y="22" width="1440" height="839" />
+    </state>
+    <state x="399" y="282" key="com.intellij.ide.util.TipDialog/0.22.1440.839@0.22.1440.839" timestamp="1610948080773" />
+  </component>
+</project>
