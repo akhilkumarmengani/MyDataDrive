@@ -9,11 +9,20 @@ package com.udacity.jwdnd.course1.cloudstorage.model;
          foreign key (userid) references USERS(userid)*/
 public class Credential {
     private Integer credentialId;
-    private String url;
+    private String URL;
     private String username;
     private String key;
     private String password;
-    private String userId;
+    private Integer userId;
+
+    public Credential(Integer credentialId, String URL, String username, String key, String password, Integer userId) {
+        this.credentialId = credentialId;
+        this.URL = URL;
+        this.username = username;
+        this.key = key;
+        this.password = password;
+        this.userId = userId;
+    }
 
     public Integer getCredentialId() {
         return credentialId;
@@ -23,12 +32,12 @@ public class Credential {
         this.credentialId = credentialId;
     }
 
-    public String getUrl() {
-        return url;
+    public String getURL() {
+        return URL;
     }
 
-    public void setUrl(String url) {
-        this.url = url;
+    public void setURL(String URL) {
+        this.URL = URL;
     }
 
     public String getUsername() {
@@ -55,11 +64,11 @@ public class Credential {
         this.password = password;
     }
 
-    public String getUserId() {
+    public Integer getUserId() {
         return userId;
     }
 
-    public void setUserId(String userId) {
+    public void setUserId(Integer userId) {
         this.userId = userId;
     }
 }
