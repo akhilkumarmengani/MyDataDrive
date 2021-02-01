@@ -43,6 +43,7 @@ public class CredentialService {
                      userId));
         } else {
             credentialForm.setKey(encodedKey);
+            credentialForm.setPassword(encryptedPassword);
             credentialMapper.updateCredential(credentialForm);
         }
         return 1;
