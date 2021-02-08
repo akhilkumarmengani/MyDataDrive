@@ -1,8 +1,7 @@
 package com.udacity.jwdnd.course1.cloudstorage;
 
 import com.udacity.jwdnd.course1.cloudstorage.model.CredentialForm;
-import com.udacity.jwdnd.course1.cloudstorage.model.NoteForm;
-import com.udacity.jwdnd.course1.cloudstorage.services.EncryptionService;
+
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
@@ -11,6 +10,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.springframework.boot.autoconfigure.AutoConfigureOrder;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.web.server.LocalServerPort;
 
@@ -65,8 +65,8 @@ class CredentialTests {
     }
 
     @Test
-    @Order(1)
-    public void testZCreateCredentialAndDisplay() throws InterruptedException {
+    @AutoConfigureOrder(3)
+    public void testCreateCredentialAndDisplay() throws InterruptedException {
         signUp();
         Login();
 
@@ -92,7 +92,7 @@ class CredentialTests {
     }
 
     @Test
-    @Order(2)
+    @AutoConfigureOrder(2)
     public void testModifyCredentialsAndSave() throws InterruptedException {
         String URL = "NewURL";
         String username = "NewUsername";
@@ -123,9 +123,12 @@ class CredentialTests {
         WebElement credentialTable = driver.findElement(By.id("credentialTable"));
         wait.until(ExpectedConditions.elementToBeClickable(credentialTable));
 
-        List<WebElement> credentialList = credentialTable.findElements(By.tagName("tr"));
-        String deleteTitle = null;
-        WebElement deleteElement = null;
+        List<WebElement> tBody = credentialTable.findElements(By.tagName("tbody"));
+        if(tBody==null)
+            Assertions.assertEquals(1, 2);
+        List<WebElement> credentialList = tBody.get(0).findElements(By.tagName("tr"));
+
+
         boolean isURLCorrect = false;
         boolean isPasswordCorrect = false;
         boolean isUsernameCorrect = false;
@@ -142,22 +145,23 @@ class CredentialTests {
                 System.out.print(col.getText() + "\t");
             }
             if(isURLCorrect) {
-                List<WebElement> tdCols = row.findElements(By.tagName("td"));
-                for (WebElement col : tdCols) {
-                    EncryptionService eS= new EncryptionService();
-                    eS.
-                    if (password.equals(col.getText())) {
+
+                List<WebElement> tdBCols = tBody.get(0).findElements(By.tagName("td"));
+
+                for (WebElement col : tdBCols) {
+                    isPasswordCorrect = false;
+                    isUsernameCorrect = false;
+                    if (!password.equals(col.getText())) {
                         Assertions.assertEquals(1, 1);
                         isPasswordCorrect = true;
-                        break;
                     }
                     if(username.equals(col.getText())){
                         Assertions.assertEquals(1, 1);
                         isUsernameCorrect = true;
-                        break;
                     }
                     System.out.print(col.getText() + "\t");
                 }
+
             }
 
         }
@@ -166,43 +170,55 @@ class CredentialTests {
 
     }
 
+    @Test
+    @AutoConfigureOrder(1)
+    public void testDeleteNoteAndVerify() throws InterruptedException {
 
-    public void testZDeleteNoteAndVerify() throws InterruptedException {
-        //Thread.sleep(2000);
-        //signUp();
+        signUp();
         Login();
 
-        HomePage homePage = new HomePage(driver);
-        homePage.goToNotesTab();
+        String url = "https://www.google.com";
+        String username = "akhil";
+        String password = "12345";
 
-        NoteForm noteForm = homePage.deleteDisplayNote();
-        System.out.println(noteForm.getNoteTitle());
-        String noteTitle = null;
+        HomePage homePage = new HomePage(driver);
+        homePage.createCredentialsAndSave(url,username,password);
 
         ResultPage resultPage = new ResultPage(driver);
         resultPage.goToHome();
 
-        homePage.goToNotesTab();
+        CredentialForm credentialForm = homePage.deleteDisplayCredential();
+        System.out.println(credentialForm.getURL());
 
-        WebElement notesTable = driver.findElement(By.cssSelector("#userTable"));
-        List<WebElement> notesList = notesTable.findElements(By.tagName("tr"));
-        String deleteTitle = null;
-        WebElement deleteElement = null;
-        for (int i = 0; i < notesList.size(); i++) {
-            if(i==0){
-                continue;
-            }
-            WebElement row = notesList.get(i);
-            List<WebElement> cols = row.findElements(By.tagName("th"));
-            for (WebElement col : cols) {
-                noteTitle = (String)col.getText();
-                if(noteTitle.equals(noteForm.getNoteTitle())){
-                    Assertions.assertEquals(1, 2);
+        resultPage.goToHome();
+
+        homePage.goToCredentialsTab();
+
+        WebElement credentialTable = driver.findElement(By.id("credentialTable"));
+        List<WebElement> tBody = credentialTable.findElements(By.tagName("tBody"));
+        List<WebElement> credentialList = tBody.get(0).findElements(By.tagName("tr"));
+
+        if(tBody == null || tBody.size() == 0)
+            Assertions.assertNotEquals(1,2);
+        boolean isURLDeleted = true;
+
+        for (int i = 0; i < credentialList.size(); i++) {
+            WebElement row = credentialList.get(i);
+            List<WebElement> thCols = row.findElements(By.tagName("th"));
+            for (WebElement col : thCols) {
+                if(credentialForm.getURL().equals(col.getText())){
+                    Assertions.assertEquals(1, 1);
+                    isURLDeleted = false;
                     break;
                 }
                 System.out.print(col.getText() + "\t");
             }
+
+
         }
+        if(!isURLDeleted)
+            Assertions.assertEquals(1, 2);
+
     }
 
 
